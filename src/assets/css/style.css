@@ -14,7 +14,6 @@
   display: flex;
   align-items: center;
   margin: 40px 0 20px 0;
- 
 }
 
 .logo-container img {
@@ -46,7 +45,15 @@
   font-size: 18px;
   color: #333333;
   padding: 10px;
+  box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.15);
 }
+
+/* .footer-concluidos p {
+  font-family: 'Recursive';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+} */
 
 .footer-concluidos > .container-botoes {
   display: flex;
@@ -62,8 +69,9 @@
   CINZA = "#333333" 
 */
 
-.container-botoes > button {
-  width: 90px;
+.container-botoes > button:first-of-type {
+  width: 85px;
+  height: 37px;
   font-family: 'Recursive';
   font-style: normal;
   font-weight: 400;
@@ -74,9 +82,47 @@
   justify-content: center;
   text-align: center;
   color: #FFFFFF;
-  background: blue;
+  background: #FF3030;
   border-radius: 5px;
-  border: 1px solid blue;
+  border: 1px solid #FF3030;
+  padding:5px;
+}
+
+.container-botoes > button:nth-of-type(2) {
+  width: 85px;
+  height: 37px;
+  font-family: 'Recursive';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  background: #FF922E;
+  border-radius: 5px;
+  border: 1px solid #FF922E;
+  padding:5px;
+}
+
+.container-botoes > button:last-of-type {
+  width: 85px;
+  height: 37px;
+  font-family: 'Recursive';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  background: #2FBE34;
+  border-radius: 5px;
+  border: 1px solid #2FBE34;
   padding:5px;
 }
 
