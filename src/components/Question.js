@@ -2,13 +2,15 @@ import play from '../assets/img/seta_play.png'
 import {useState} from 'react'
 import setaVirar from '../assets/img/seta_virar.png'
 
-function TurnedQuestion({question}) {
+function TurnedQuestion({question, answer}) {
+  const [showAnswer, setShowAnswer] = useState(question)
+
   return(
-    <div className="pergunta-aberta">
-      <p>{question}</p>
+    <div data-identifier="flashcard-index-item flashcard-answer" className="pergunta-aberta">
+      <p>{showAnswer}</p>
       <img
-        
-        onClick={''}
+        data-identifier="flashcard-turn-btn"
+        onClick={()=> setShowAnswer(answer)}
         src={setaVirar}
         alt="turn"
       />
@@ -16,7 +18,7 @@ function TurnedQuestion({question}) {
   )
 }
 
-export default function Question({ index }) {
+export default function Question({ index, question, answer }) {
 
   const [showQuestion, setShowQuestion] = useState(false);
 
@@ -32,7 +34,7 @@ export default function Question({ index }) {
         alt="Play"
       />
     </div>
-      ): (<TurnedQuestion />)}
+      ): (<TurnedQuestion question={question} answer={answer} />)}
     </>
   )
 }
