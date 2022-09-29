@@ -1,11 +1,18 @@
 import play from '../assets/img/seta_play.png'
 import {useState} from 'react'
+import setaVirar from '../assets/img/seta_virar.png'
 
-function TurnedQuestion() {
+function TurnedQuestion({question}) {
   return(
-    <>
-      Pergunta
-    </>
+    <div className="pergunta-aberta">
+      <p>{question}</p>
+      <img
+        
+        onClick={''}
+        src={setaVirar}
+        alt="turn"
+      />
+    </div>
   )
 }
 

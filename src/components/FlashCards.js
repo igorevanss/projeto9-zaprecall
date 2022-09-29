@@ -1,6 +1,7 @@
 import questions from './Questions'
 import Question from './Question'
 
+
 export default function FlashCards() {
   return (
     <>
