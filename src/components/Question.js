@@ -18,18 +18,16 @@ function TurnedQuestion({question, answer}) {
   )
 }
 
-export default function Question({ index, question, answer }) {
-
-  const [showQuestion, setShowQuestion] = useState(false);
+export default function Question({ index, question, answer,tap, tapCard }) {
 
   return (
     <>
-      {!showQuestion ? (
+      {!tap ? (
         <div data-identifier="flashcard" className="pergunta-fechada">
       <p>{`Pergunta ${index + 1}`}</p>
       <img
         data-identifier="flashcard-show-btn"
-        onClick={() => setShowQuestion(true)}
+        onClick={() => tapCard(index)}
         src={play}
         alt="Play"
       />
