@@ -2,7 +2,7 @@ import questions from './questions'
 import Question from './Question'
 import { useState } from 'react'
 
-let questionData = questions.map((option, index)=> (
+let questionData = questions.map((option)=> (
   {...option, 
   tap:false}
 ))
@@ -25,7 +25,6 @@ export default function FlashCards() {
       }
     })
     setAllQuestions([...newQuestions])
-    console.log(newQuestions)
   }
 
   return(
