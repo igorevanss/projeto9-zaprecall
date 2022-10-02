@@ -6,13 +6,13 @@ import { useState } from "react"
 
 export default function Footer() {
   function memoryBtn(optionClicked) {
-    if (optionClicked === 'Não lembrei' && tap === true) {
+    if (optionClicked === 'Não lembrei') {
       forgot()
       addCounter()
-    } else if (optionClicked === 'Quase não lembrei' && tap === true) {
+    } else if (optionClicked === 'Quase não lembrei') {
       almostForgot()
       addCounter()
-    } else if (optionClicked === 'Zap!' && tap === true) {
+    } else if (optionClicked === 'Zap!') {
       zap()
       addCounter()
     }
@@ -21,10 +21,10 @@ export default function Footer() {
   function forgot() {
     return (
       <div data-identifier="flashcard" className="pergunta-fechada">
-        <p>{`Pergunta ${index + 1}`}</p>
+        <p>{`Pergunta ${"index" + 1}`}</p>
         <img
           data-identifier="flashcard-show-btn"
-          onClick={() => tapCard(index)}
+          onClick={"() => tapCard(index)"}
           src={error}
           alt="erro"
         />
@@ -35,10 +35,10 @@ export default function Footer() {
   function almostForgot() {
     return (
       <div data-identifier="flashcard" className="pergunta-fechada">
-        <p>{`Pergunta ${index + 1}`}</p>
+        <p>{`Pergunta ${"index" + 1}`}</p>
         <img
           data-identifier="flashcard-show-btn"
-          onClick={() => tapCard(index)}
+          onClick={"() => tapCard(index)"}
           src={almost}
           alt="quase"
         />
@@ -49,10 +49,10 @@ export default function Footer() {
   function zap() {
     return (
       <div data-identifier="flashcard" className="pergunta-fechada">
-        <p>{`Pergunta ${index + 1}`}</p>
+        <p>{`Pergunta ${"index" + 1}`}</p>
         <img
           data-identifier="flashcard-show-btn"
-          onClick={() => tapCard(index)}
+          onClick={"() => tapCard(index)"}
           src={correct}
           alt="certo"
         />
