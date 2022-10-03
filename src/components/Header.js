@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import logo from '../assets/img/logo.png'
 
-export default function () {
+export default function Header () {
   return (
     <LogoContainer>
       <img src={logo} alt="logo" />

@@ -25,33 +25,6 @@ function TurnedQuestion({ question, answer }) {
   )
 }
 
-function Forgot({ index }) {
-  return (
-    <div className="pergunta-fechada">
-      <p>{`Pergunta ${index + 1}`}</p>
-      <img src={error} alt="erro" />
-    </div>
-  )
-}
-
-function AlmostForgot({ index }) {
-  return (
-    <div className="pergunta-fechada">
-      <p>{`Pergunta ${index + 1}`}</p>
-      <img src={almost} alt="quase" />
-    </div>
-  )
-}
-
-function Zap({ index }) {
-  return (
-    <div data-identifier="flashcard" className="pergunta-fechada">
-      <p>{`Pergunta ${index + 1}`}</p>
-      <img src={correct} alt="certo" />
-    </div>
-  )
-}
-
 export default function Question({
   index,
   question,
@@ -62,8 +35,8 @@ export default function Question({
 }) {
   return (
     <>
-      {!tap ? (
-        <PerguntaFechada data-identifier="flashcard">
+      {!tap || clickedBtn === 'Não lembrei' || clickedBtn === 'Quase não lembrei' || clickedBtn === 'Zap!' ? (
+        <PerguntaFechada clickedBtn={clickedBtn} data-identifier="flashcard">
           <p>{`Pergunta ${index + 1}`}</p>
           <img
             data-identifier="flashcard-show-btn"
@@ -97,6 +70,7 @@ const PerguntaFechada = styled.div`
   font-size: 16px;
   line-height: 19px;
   color: #333333;
+  
 }
 `
 const PerguntaAberta = styled.div`
