@@ -7,13 +7,12 @@ let questionData = questions.map((option)=> (
   tap:false}
 ))
 
-export default function FlashCards({childToParent}) {
+export default function FlashCards({clickedBtn}) {
   const [allQuestions, setAllQuestions] = useState(questionData)
-
+  
   function tapCard(questionIndex){
     const newQuestions = allQuestions.map((eachQuestion, index)=>{
       if(questionIndex === index){
-        childToParent(questionIndex)
         return{
           ...eachQuestion,
           tap:true
@@ -38,6 +37,7 @@ export default function FlashCards({childToParent}) {
           index={index}
           tap={option.tap}
           tapCard={tapCard}
+          clickedBtn={clickedBtn}
         />
       ))}
     </>

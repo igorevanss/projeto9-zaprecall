@@ -1,63 +1,10 @@
 import questions from './questions'
-import error from "../assets/img/icone_erro.png"
-import almost from "../assets/img/icone_quase.png"
-import correct from "../assets/img/icone_certo.png"
 import { useState } from "react"
 
-export default function Footer() {
+export default function Footer({childToParent}) {
   function memoryBtn(optionClicked) {
-    if (optionClicked === 'Não lembrei') {
-      forgot()
-      addCounter()
-    } else if (optionClicked === 'Quase não lembrei') {
-      almostForgot()
-      addCounter()
-    } else if (optionClicked === 'Zap!') {
-      zap()
-      addCounter()
-    }
-  }
-
-  function forgot() {
-    return (
-      <div data-identifier="flashcard" className="pergunta-fechada">
-        <p>{`Pergunta ${"index" + 1}`}</p>
-        <img
-          data-identifier="flashcard-show-btn"
-          onClick={"() => tapCard(index)"}
-          src={error}
-          alt="erro"
-        />
-      </div>
-    )
-  }
-
-  function almostForgot() {
-    return (
-      <div data-identifier="flashcard" className="pergunta-fechada">
-        <p>{`Pergunta ${"index" + 1}`}</p>
-        <img
-          data-identifier="flashcard-show-btn"
-          onClick={"() => tapCard(index)"}
-          src={almost}
-          alt="quase"
-        />
-      </div>
-    )
-  }
-
-  function zap() {
-    return (
-      <div data-identifier="flashcard" className="pergunta-fechada">
-        <p>{`Pergunta ${"index" + 1}`}</p>
-        <img
-          data-identifier="flashcard-show-btn"
-          onClick={"() => tapCard(index)"}
-          src={correct}
-          alt="certo"
-        />
-      </div>
-    )
+    childToParent(optionClicked)
+    addCounter()
   }
 
   const [counter, setCounter] = useState(0)
